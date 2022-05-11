@@ -7,6 +7,7 @@ const app = express();
 app.use(cors());
 app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', ['*']);
+  res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   next();
 })
 app.use(express.json()); //importante ser antes das rotas

@@ -10,6 +10,7 @@ const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use((req, res, next) => {
     res.append('Access-Control-Allow-Origin', ['*']);
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     next();
 });
 app.use(express_1.default.json()); //importante ser antes das rotas
