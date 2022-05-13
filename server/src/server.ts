@@ -4,13 +4,7 @@ import { routes } from "./routes";
 
 const app = express();
 
-app.use(cors());
-app.use((req, res, next) => {
-  res.append('Access-Control-Allow-Origin', ['*']);
-  res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.append('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-})
+app.use(cors({origin: process.env.ORIGIN}));
 app.use(express.json()); //importante ser antes das rotas
 app.use(routes);
 
